@@ -169,7 +169,7 @@ const RequestAccountPage: React.FC = () => {
               <tr>
                 <td colSpan={5}>No more request accounts</td>
               </tr>
-            ) : (
+              ) : (
               tableData.map((row, index) => (
                 <tr key={index}>
                   <td>{row.firstName}</td>

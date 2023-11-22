@@ -182,8 +182,8 @@ const RequestAccountPageDetails: React.FC<RequestAccountPageDetailsProps> = () =
           <input type="text" value={user.username} onChange={(e) => console.log(e.target.value)} />
         </label>
         <br />
-        <button onClick={handleSave} className='accept'>Save</button>
-        <button onClick={handleCancel} className='cancel'>Cancel</button>
+        <button onClick={handleSave} className='accept'>💾</button>
+        <button onClick={handleCancel} className='cancel'>✖️</button>
       </div>
     ) : (
         <div>
@@ -194,15 +194,15 @@ const RequestAccountPageDetails: React.FC<RequestAccountPageDetailsProps> = () =
           <p>Password: {user.password}</p>
           <p>Username: {user.username}</p>
           <p>Status: {user.status}</p>
-        <button onClick={handleAccept} className='accept' disabled={Accepted || Declined} >Accept</button> {/*When the user is Accepted it must also update the existing document and must be disable the accept button and decline button when accepted or it will replace lock account button or delete account button instead of accept and decline*/}
+        <button onClick={handleAccept} className='accept' disabled={Accepted || Declined} >✔️</button> {/*When the user is Accepted it must also update the existing document and must be disable the accept button and decline button when accepted or it will replace lock account button or delete account button instead of accept and decline*/}
             &nbsp;
-            <button onClick={handleDecline} className='decline' disabled={Accepted || Declined} >Decline</button>{/*when decline button is press it will be archived in the decline page and accept and decline button will be disable or removed*/}
-            &nbsp;
-            &nbsp;
-            <button onClick={handleEdit} className='edit'>Edit</button>
+            <button onClick={handleDecline} className='decline' disabled={Accepted || Declined} >✖️</button>{/*when decline button is press it will be archived in the decline page and accept and decline button will be disable or removed*/}
             &nbsp;
             &nbsp;
-            <button onClick={handleBack} className='back'>Back</button>
+            <button onClick={handleEdit} className='edit'>📝</button>
+            &nbsp;
+            &nbsp;
+            <button onClick={handleBack} className='back'>←</button>
         </div>
         )}
       </div>

@@ -3,6 +3,7 @@ import Sidebar from './Pages/SideBar';
 import RequestAccountPage from './Pages/RequestAccountPages.tsx';
 import RequestAccountPageDetails from './Pages/RequestAccountPageDetails.tsx';
 import ApprovalPages from './Pages/ApprovalPages.tsx';
+import ApprovalPageDetails from './Pages/ApprovalPageDetails.tsx'
 import DeclinePage from './Pages/DeclinePage.tsx';
 import UserDetails from './Pages/UserDetails'; 
 import AllRequestAccountPage from './Pages/AllRequestAccountPage';
@@ -22,6 +23,7 @@ function App() {
               <Route exact path='/requestAccountPageDetails/:username' element={<RequestAccountPageDetails/>} />
               <Route exact path='/request-accountdetails' element={<RequestAccountPage/>}/>
               <Route exact path='/approved-accounts' element={<ApprovalPages/>}/>
+              <Route exact path='/ApprovalPageDetails/:username' element={<ApprovalPageDetails/>} />
               <Route exact path='/decline-accounts' element={<DeclinePage/>}/>
               <Route exact path='/all-request-account' element={<AllRequestAccountPage/>}/>
             </Routes> 

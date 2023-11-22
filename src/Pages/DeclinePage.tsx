@@ -57,14 +57,20 @@ useEffect(() => {
                         </tr>
                     </thead>
                     <tbody>
-                    {tableData.map((row, index) => (
-                         <tr key={index}>
-                                <td>{row.firstName}</td>
-                                <td>{row.lastName}</td>
-                                <td>{row.username}</td>
-                                <td>{row.status}</td>
-                            </tr>
-                        ))}
+                    {tableData.length === 0 ? (
+                    <tr>
+                      <td colSpan={5}>No more request accounts</td>
+                    </tr>
+                    ) : (
+                        tableData.map((row, index) => (
+                            <tr key={index}>
+                                    <td>{row.firstName}</td>
+                                    <td>{row.lastName}</td>
+                                    <td>{row.username}</td>
+                                    <td>{row.status}</td>
+                                </tr>
+                            ))
+                        )}
                     </tbody>
                 </table>
             )}
