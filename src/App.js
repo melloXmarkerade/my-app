@@ -1,22 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Sidebar from './Pages/SideBar';
+import RequestAccountPage from './Pages/RequestAccountPages.tsx';
+import RequestAccountPageDetails from './Pages/RequestAccountPageDetails.tsx';
+import ApprovalPages from './Pages/ApprovalPages.tsx';
+import DeclinePage from './Pages/DeclinePage.tsx';
+import UserDetails from './Pages/UserDetails'; 
+import AllRequestAccountPage from './Pages/AllRequestAccountPage';
+import Homepage from './Pages/Homepage';
+import {Routes, Route,  } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          
+        <Sidebar />
+            <Routes>
+              <Route exact path='/' element={<Homepage/>}/>
+              <Route exact path='/request-account' element={<RequestAccountPage/>}/>
+              <Route exact path='/requestAccountPageDetails/:username' element={<RequestAccountPageDetails/>} />
+              <Route exact path='/request-accountdetails' element={<RequestAccountPage/>}/>
+              <Route exact path='/approved-accounts' element={<ApprovalPages/>}/>
+              <Route exact path='/decline-accounts' element={<DeclinePage/>}/>
+              <Route exact path='/all-request-account' element={<AllRequestAccountPage/>}/>
+            </Routes> 
+          </div>
       </header>
     </div>
   );

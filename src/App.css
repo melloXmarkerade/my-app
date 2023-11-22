@@ -1,5 +1,10 @@
+body {
+  font-size: 1rem; /* Base font size */
+  align-items: center;
+}
 .App {
-  text-align: center;
+  text-align: left;
+  margin-left: -100px;
 }
 
 .App-logo {
@@ -14,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #6e737e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +40,229 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  position: relative;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  position: relative;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  text-align: left;
+  margin-top: -250px;
+  margin-left: -70px;
+  padding: 0px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.sidebar.open {
+  width: 250px;
+  
+}
+
+.sidebar.open + body {
+  margin-left: 30px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  font-size: 19px;
+  border-collapse: collapse;
+  width: 100%; /* Set a fixed width for the table */
+}
+
+td, th {
+  border: 4px solid white;
+  text-align: center;
+  padding: 12px;
+  width: 270px; /* Set a fixed width for each column */
+}
+
+
+@media (max-width: 200px) {
+  table {
+    width: 50%; /* Set table width to 100% for screens smaller than 1080px */
+  }
+}
+
+h2 {
+ text-align: center; 
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: space-around; /* Space elements evenly */
+}
+
+
+.detailDesign {
+    /* Your styling rules go here */
+    /* For example: */
+    padding: 10px;
+    margin-right: 700px;
+    
+    /* Add any other styling you want for the 'detailDesign' class */
+}
+
+
+/*Fake Button inside the table*/
+
+.button-like {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
+
+.button-like:hover {
+  background-color: #0056b3; /* Change color on hover */
+}
+
+
+.button-like-Accept {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00ff229a; /* Button color */
+  color: #fff; /* Text color */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
+
+.button-like-Accept:hover {
+  background-color: #04e422; /* Change color on hover */
+}
+
+
+.button-like-Decline {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff0000a8; /* Button color */
+  color: #fff; /* Text color */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
+
+.button-like-Decline:hover {
+  background-color: #ff0000; /* Change color on hover */
+}
+
+
+/* Button Styles */
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Accept Button */
+button.accept {
+  background-color: #4caf50; /* Green */
+}
+
+/* Decline Button */
+button.decline {
+  background-color: #f44336; /* Red */
+}
+
+/* Edit Button */
+button.edit {
+  background-color: #2196f3; /* Blue */
+}
+
+/* Cancel Button */
+button.cancel {
+  background-color: #f44336; /* Red */
+}
+
+/* Back Button */
+button.back {
+  background-color: #2196f3; /* Blue */
+}
+
+/* Disabled Button Styles */
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Apply styles based on button class */
+button.accept[disabled], button.decline[disabled] {
+  background-color: #808080; /* Gray */
+}
+
+/* Hover effect */
+button:hover {
+  filter: brightness(1.2); /* Adjust the brightness for the hover effect */
 }
