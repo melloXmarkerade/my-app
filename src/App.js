@@ -7,7 +7,8 @@ import ApprovalPageDetails from './Pages/ApprovalPageDetails.tsx';
 import DeclinePage from './Pages/DeclinePage.tsx';
 import DeclinePageDetails from './Pages/DeclinePageDetails.tsx';
 import UserDetails from './Pages/UserDetails'; 
-import AllRequestAccountPage from './Pages/AllRequestAccountPage';
+import AllAccountPage from './Pages/AllAccountPage.tsx';
+import AllAccountPageDetails from './Pages/AllAccountPageDetails.tsx';
 import Homepage from './Pages/Homepage';
 import {Routes, Route,  } from 'react-router-dom';
 
@@ -27,7 +28,8 @@ function App() {
               <Route exact path='/ApprovalPageDetails/:username' element={<ApprovalPageDetails/>} />
               <Route exact path='/decline-accounts' element={<DeclinePage/>}/>
               <Route exact path='/DeclinePageDetails/:username' element={<DeclinePageDetails/>} />
-              <Route exact path='/all-request-account' element={<AllRequestAccountPage/>}/>
+              <Route exact path='/all-request-account' element={<AllAccountPage/>}/>
+              <Route exact path='/AllAccountPageDetails/:username' element={<AllAccountPageDetails/>} />
             </Routes> 
           </div>
       </header>

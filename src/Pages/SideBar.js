@@ -18,7 +18,7 @@ const SideBar = () => {
         <Link to="/request-account">Request Account</Link>
         <Link to="/approved-accounts">Approved Accounts</Link>
         <Link to="/decline-accounts">Decline Accounts</Link>
-        <Link to="/all-request-account">All Request Account</Link>
+        <Link to="/all-request-account">All Account</Link>
       </div>
     {/*End Side Bar */}
     {/*Start Content Here*/}
