@@ -1,10 +1,14 @@
 import '../App.css';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { db } from '../firebase'; // Import the database instance
 
 interface DeclineAccounts {
     firstName: string;
     lastName: string;
+    password: string;
+    email: string;
+    birthday: string;
     username: string;
     status: string;
   }
@@ -13,6 +17,11 @@ interface DeclineAccounts {
 export default function DeclinePage() {
   const [tableData, setTableData] = useState<DeclineAccounts[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  type LinkToType = {
+    pathname: string;
+    state: { user: DeclineAccounts };
+  };
 
 //fetch the data from firebase
 useEffect(() => {
@@ -54,6 +63,7 @@ useEffect(() => {
                             <th>Last Name</th>
                             <th>Username</th>
                             <th>status</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,6 +78,18 @@ useEffect(() => {
                                     <td>{row.lastName}</td>
                                     <td>{row.username}</td>
                                     <td>{row.status}</td>
+                                    <td>
+                                    <Link
+                                        to={{
+                                          pathname: `/DeclinePageDetails/${row.username}`,
+                                          state: { user: row },
+                                        } as LinkToType}
+                                      >
+                                        <b>
+                                          <p className="button-like">More Details</p>
+                                        </b>
+                                      </Link>
+                                </td>
                                 </tr>
                             ))
                         )}

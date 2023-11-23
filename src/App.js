@@ -3,8 +3,9 @@ import Sidebar from './Pages/SideBar';
 import RequestAccountPage from './Pages/RequestAccountPages.tsx';
 import RequestAccountPageDetails from './Pages/RequestAccountPageDetails.tsx';
 import ApprovalPages from './Pages/ApprovalPages.tsx';
-import ApprovalPageDetails from './Pages/ApprovalPageDetails.tsx'
+import ApprovalPageDetails from './Pages/ApprovalPageDetails.tsx';
 import DeclinePage from './Pages/DeclinePage.tsx';
+import DeclinePageDetails from './Pages/DeclinePageDetails.tsx';
 import UserDetails from './Pages/UserDetails'; 
 import AllRequestAccountPage from './Pages/AllRequestAccountPage';
 import Homepage from './Pages/Homepage';
@@ -25,6 +26,7 @@ function App() {
               <Route exact path='/approved-accounts' element={<ApprovalPages/>}/>
               <Route exact path='/ApprovalPageDetails/:username' element={<ApprovalPageDetails/>} />
               <Route exact path='/decline-accounts' element={<DeclinePage/>}/>
+              <Route exact path='/DeclinePageDetails/:username' element={<DeclinePageDetails/>} />
               <Route exact path='/all-request-account' element={<AllRequestAccountPage/>}/>
             </Routes> 
           </div>

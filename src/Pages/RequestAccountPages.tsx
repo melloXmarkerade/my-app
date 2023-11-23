@@ -91,7 +91,7 @@ const RequestAccountPage: React.FC = () => {
           firstName,
           lastName,
           username,
-          status: 'Accepted',
+          status: 'Declined',
         });
     
   

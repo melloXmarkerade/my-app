@@ -13,9 +13,9 @@ interface UserDetails {
   }
 
 
-interface RequestAccountPageDetailsProps {}
+interface ApprovalPageDetailsSC {}
 
-const RequestAccountPageDetails: React.FC<RequestAccountPageDetailsProps> = () => {
+const ApprovalPageDetails: React.FC<ApprovalPageDetailsSC> = () => {
   const { username } = useParams<{ username: string }>();
   const [user, setUser] = useState<UserDetails | null>(null);
   const [editable, setEditable] = useState(false);
@@ -164,7 +164,7 @@ const RequestAccountPageDetails: React.FC<RequestAccountPageDetailsProps> = () =
 
   return (
     <div>
-    <h2>User Details</h2>
+    <h2>Active User Details</h2>
     {editable ? (
       <div>
         <label>
@@ -209,5 +209,5 @@ const RequestAccountPageDetails: React.FC<RequestAccountPageDetailsProps> = () =
   );
 };
 
-export default RequestAccountPageDetails;
+export default ApprovalPageDetails;
 
