@@ -166,7 +166,7 @@ const ApprovalPageDetails: React.FC<ApprovalPageDetailsSC> = () => {
     <div>
     <h2>Active User Details</h2>
     {editable ? (
-      <div>
+      <div className='DetailForm'>
         <label>
           First Name:
           <input type="text" value={user.firstName} onChange={(e) => console.log(e.target.value)} />
@@ -186,17 +186,14 @@ const ApprovalPageDetails: React.FC<ApprovalPageDetailsSC> = () => {
         <button onClick={handleCancel} className='cancel'>✖️</button>
       </div>
     ) : (
-        <div>
-          <p>First Name: {user.firstName}</p>
-          <p>Last Name: {user.lastName}</p>
-          <p>Birthday: {user.birthday}</p>
-          <p>Email: {user.email}</p>
-          <p>Password: {user.password}</p>
-          <p>Username: {user.username}</p>
-          <p>Status: {user.status}</p>
-        <button onClick={handleAccept} className='accept' disabled={Accepted || Declined} >✔️</button> {/*When the user is Accepted it must also update the existing document and must be disable the accept button and decline button when accepted or it will replace lock account button or delete account button instead of accept and decline*/}
-            &nbsp;
-            <button onClick={handleDecline} className='decline' disabled={Accepted || Declined} >✖️</button>{/*when decline button is press it will be archived in the decline page and accept and decline button will be disable or removed*/}
+        <div className='DetailForm'>
+          <p>First Name: <span  className='user-detail'>{user.firstName}</span></p>
+          <p>Last Name: <span  className='user-detail'>{user.lastName}</span></p>
+          <p>Birthday: <span  className='user-detail'>{user.birthday}</span></p>
+          <p>Email: <span  className='user-detail'>{user.email}</span></p>
+          <p>Password: <span  className='user-detail'>{user.password}</span></p>
+          <p>Username: <span  className='user-detail'>{user.username}</span></p>
+          <p>Status: <span  className='user-detail'>{user.status}</span></p>
             &nbsp;
             &nbsp;
             <button onClick={handleEdit} className='edit'>📝</button>
